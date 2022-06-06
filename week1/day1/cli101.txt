@@ -1,12 +1,14 @@
 Small Assignment:
 git status 
     - this command tells us the state of the repository and where we are staged.
+    - status is the option
 
 rm -rf ./Sample 
-    - the rm command removes a file. -rf is an option that will allow you to force a removal from the root. ./Sample is the file to be removed. 
+    - the rm command removes a file. 
+    - rf is an option that will allow you to force a removal from the root. 
+    - ./Sample is the file to be removed. 
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    - this is the curl command. it allows you to transfer data. This command is installing Homebrew onto your computer.
-
-Medium Assignment:
-
+    - this is the curl command. it allows you to transfer data. 
+    - /usr/bin/ruby is the directory, which is an argument
+    
