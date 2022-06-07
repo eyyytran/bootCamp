@@ -1,11 +1,11 @@
 Small Assignment:
 git status 
     - this command tells us the state of the repository and where we are staged.
-    - status is the option
+    - status is the argument
 
 rm -rf ./Sample 
     - the rm command removes a file. 
-    - rf is an option that will allow you to force a removal from the root. 
+    - rf is an argument that will allow you to force a removal from the root. 
     - ./Sample is the file to be removed. 
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
