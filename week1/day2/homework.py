@@ -6,7 +6,7 @@ def coin():
         return 'You flipped a coin! \nIt is heads!'
     return 'You flipped a coin! \nIt is tails!'
 
-print(coin())
+#print(coin())
 
 #Even Odd
 userNum = int(input('Give me a whole number: '))
@@ -15,7 +15,7 @@ def evenOdd(userNum):
         return "It's even!"
     return "It's odd!"
 
-print(evenOdd(userNum))
+#print(evenOdd(userNum))
 
 #Dice Roller
 import random
@@ -27,5 +27,5 @@ def dice (minSides,sides):
     result = random.randint(minSides,sides)
     return "It's a " + str(result)
 
-print(dice(1,sides))
+#print(dice(1,sides))
     
