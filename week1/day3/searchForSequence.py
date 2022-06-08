@@ -4,5 +4,3 @@ seq1 = [1,6,-1,10]
 def isValidSubsequence(array, sequence):
     for num in array, enumerate(array):
             pass
-
-###Three Sum

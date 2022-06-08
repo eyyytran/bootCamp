@@ -26,12 +26,10 @@ def cropped_v2(list):
             list.remove(name)
     return list
 
-
 # # Add new item to list after a specified item
 list2 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
 # # output [10, 20, [300, 400, [5000, 6000, 7000], 500], 30, 40]
 list2[2][2].append(7000)
-
 
 # Replace list's item with new value if found
 list3 = [5, 10, 15, 20, 25, 50, 20]
@@ -54,3 +52,69 @@ def find(list):
             list.remove(list[i])
             list.insert(i,200)
     return list
+
+#Sequence Practive
+list5 = [4,6,1,2,-1,-2]
+#Small1
+print(sum(list5))
+
+#Small2
+list6 = list5.copy()
+list6.sort()
+print(list6[-1])
+
+#Small3
+print(list6[0])
+
+#Small4
+def evens(list):
+    for num in list:
+        if num % 2 == 0:
+            return num
+print(evens(list5))
+
+#Small5
+def pos(list):
+    for num in list:
+        if num > 0:
+            return num
+print(pos(list5))
+
+#Small6
+def pos2(list):
+    newList = []
+    for num in list:
+        if num > 0:
+            newList.append(num)
+    return newList
+print(pos2(list5))
+
+#Small7
+def mults(list, factor):
+    newList = []
+    for num in list:
+        mult = factor * num
+        newList.append(mult)
+    return newList
+print(mults(list5,5))
+
+#Small8
+string1 = 'coolio'
+def rev(string):
+    newString = string[::-1]
+    return newString
+print(rev(string1))
+
+#Large Tic-Tac-Toe
+def makeBoard(size):
+    board = []
+    for y in range(size): #making rows
+        board.append([])
+        for x in range(size):
+            board[y].append("[%s][%s]" % ('',''))
+    for row in board: #making columns
+        for column in row:
+            print("%s " % column, end="")
+        print("\n")
+    return board
+makeBoard(3)
