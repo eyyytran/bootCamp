@@ -12,14 +12,13 @@ class toDo:
 
 def addTask():
     userTask = input('Type in your task here: ')
-    taskPriority = input('Add a Priority:\nLow\nMedium\nHigh\n')
+    taskPriority = input('Add a Priority:\nLow\nMedium\nHigh\nType Here: ')
     newTask = toDo(userTask, taskPriority)
     taskList.append(newTask)
 
 def removeTask():
-    userRemove = int(input('Which task do you want to remove?\n'))
-    for task in taskList:
-        taskList.pop(userRemove)
+    userRemove = int(input('Which task do you want to remove?\n'))-1
+    taskList.pop(userRemove)
 
 def printTasks():
     for toDo in taskList:
