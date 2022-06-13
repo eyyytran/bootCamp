@@ -1,4 +1,4 @@
-#Create a todo list
+
 taskList = []
 
 class toDo:
@@ -25,8 +25,6 @@ def printTasks():
         index = taskList.index(toDo)
         print(str(index+1) + ' - ' + toDo.task + ' - ' + toDo.priority)
 
-
-#adding to to-do list
 def toDos():
     runList = True
     while runList:
