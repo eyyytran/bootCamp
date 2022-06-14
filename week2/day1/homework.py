@@ -16,14 +16,15 @@ def addTask():
     newTask = toDo(userTask, taskPriority)
     taskList.append(newTask)
 
-def removeTask():
-    userRemove = int(input('Which task do you want to remove?\n'))-1
-    taskList.pop(userRemove)
-
 def printTasks():
     for toDo in taskList:
         index = taskList.index(toDo)
         print(str(index+1) + ' - ' + toDo.task + ' - ' + toDo.priority)
+
+def removeTask():
+    printTasks()
+    userRemove = int(input('Which task do you want to remove?\n'))-1
+    taskList.pop(userRemove)
 
 def toDos():
     runList = True
