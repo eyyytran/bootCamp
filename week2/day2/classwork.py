@@ -8,11 +8,6 @@ class Parent:
         self.name = name
         self.occupation = occupation
         self.DNA = DNA
-    def __str__(self):
-        print(f"")
-        {self.name}
-        {self.occupation}
-        {self.DNA}
 
 class Child(Parent):
     def __init__(self, name, occupation, gameName, DNA=100):
@@ -27,4 +22,7 @@ class Sibling(Child):
 naruto = Parent('Naruto', 'Hokage')
 boruto = Child('Boruto', 'Genin', randint(48, 55), 'rock paper scissors')
 himawari = Sibling('Himawari', 'Kid', 'hide and seek', 'none', randint(44,58))
+
 print(naruto)
+print(boruto)
+print(himawari)
