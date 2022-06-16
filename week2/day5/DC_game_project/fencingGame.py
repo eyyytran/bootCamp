@@ -14,7 +14,7 @@ def initOpponents():
         Opponent('Esther Lu', 'C', 50, 50),
         Opponent('Isak Swaim', 'D', 30, 30),
         Opponent('Mark Zuckerberg', 'E', 20, 20),
-        Opponent('Joe Shmoe', 'U', 10, 10)
+        Opponent('Joe Schmoe', 'U', 10, 10)
     ]
     for opponent in opponents:
         gameState.addOpponent(opponent)
