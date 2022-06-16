@@ -7,4 +7,4 @@ class Opponent(Player):
         self.rating = rating
 
     def __str__(self):
-        return self.name + ' - ' + self.rating
+        return self.name + ' - Rating: ' + self.rating

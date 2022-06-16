@@ -25,7 +25,7 @@ def printGameStartMessage(player, opponent):
 
 def scene1():
     printTitleBorders()
-    print("Welcome to Digital Crafts Fencing Club!\nYou've arrived just in time for open fencing.\nLet's get you started!\n\n")
+    print("Welcome to Digital Crafts Fencing Club!\nYou've arrived just in time for open fencing.\nI heard that you're a complete beginner.\nThere's no better way to learn than to actually fence.\nLet's get you started!\n\n")
 
 
 def scene2():

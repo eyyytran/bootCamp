@@ -1,5 +1,5 @@
 from random import randint
-from GameState import gameState
+from gameStateFile import gameState
 from playerFile import Player
 from opponentFile import Opponent
 from styles import printContentBorders, printTitleBorders, printGameStartMessage, scene1, scene2
@@ -9,7 +9,7 @@ def initOpponents():
     opponents = [
         Opponent('Aron Szilagyi', 'GOAT', 900, 1000),
         Opponent('Kim Jung Hwan', 'A', 1000, 800),
-        Opponent('Olga Kharlan', 'A', 90, 90),
+        Opponent('Olga Kharlan', 'A', 800, 800),
         Opponent('Chloe Fox-Gitomer', 'B', 70, 70),
         Opponent('Esther Lu', 'C', 50, 50),
         Opponent('Isak Swaim', 'D', 30, 30),
@@ -62,7 +62,7 @@ def selectOpponent():
 def printOpponentChoices():
     for index, opponent in enumerate(gameState.listOfOpponents):
         index = index + 1
-        print('To fence', opponent, 'select', index)
+        print(index, ')', opponent)
 
 
 def getPlayerChoice():
