@@ -20,7 +20,6 @@ python3
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 ```
 
 - You will be prompted to enter your Mac password.
