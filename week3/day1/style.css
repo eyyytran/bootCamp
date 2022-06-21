@@ -1,0 +1,10 @@
+.cityname {
+  color: aquamarine;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.container {
+  background-color: bisque;
+  height: 100px;
+  width: 100px;
+}
