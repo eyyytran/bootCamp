@@ -1,3 +1,8 @@
+:root {
+  /* CSS variables https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+  --navbar-bg-color: #ffce2d;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +11,10 @@ body {
 }
 
 .container {
-  width: 100vw;
+  width: 740px;
   height: 100vh;
 }
+
 .top {
   display: flex;
   justify-content: flex-start;
@@ -17,7 +23,7 @@ body {
 }
 
 #top-left {
-  background-color: #ffce2d;
+  background-color: var(--navbar-bg-color);
   height: 44px;
 }
 
@@ -31,7 +37,7 @@ body {
   width: 50px;
 }
 #top-middle {
-  background-color: #ffce2d;
+  background-color: var(--navbar-bg-color);
   height: 44px;
   width: 700px;
   border-bottom-style: solid;
@@ -40,7 +46,7 @@ body {
 }
 
 #top-right {
-  background-color: #ffce2d;
+  background-color: var(--navbar-bg-color);
   height: 44px;
   width: 100vw;
   border-bottom-right-radius: 10px;
@@ -59,7 +65,7 @@ body {
 }
 
 #sidebar {
-  background-color: #ffce2d;
+  background-color: var(--navbar-bg-color);
   margin-top: 0px;
   height: 750px;
   width: 128px;
@@ -71,6 +77,7 @@ body {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: black;
+  position: relative;
 }
 
 .rectangle {
@@ -83,7 +90,7 @@ body {
   margin-top: 75px;
   margin-left: 10px;
 }
-#searchtext {
+.sidebartext {
   margin-bottom: 0px;
   text-align: center;
   font-size: 11px;
@@ -94,6 +101,17 @@ body {
   height: 22px;
   width: 60px;
   margin-left: 10px;
+}
+
+#sidebargif {
+  padding: 5px;
+  width: 110px;
+  height: 110px;
+}
+
+#languagedropdown {
+  height: 30.5px;
+  margin-left: 5px;
 }
 #main {
   padding: 20px;
@@ -154,7 +172,7 @@ hr {
   text-decoration: none;
 }
 
-.maincontent {
+#maincontent {
   height: 463px;
   width: 424px;
   display: flex;
@@ -193,4 +211,23 @@ hr {
   color: gray;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.stupid-border-thingy-container {
+  background: var(--navbar-bg-color);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: -20px;
+}
+
+.stupid-border-thingy-border {
+  height: 100%;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 10px;
+  border: 2px solid black;
+  border-right: 0;
+  border-bottom: 0;
 }
