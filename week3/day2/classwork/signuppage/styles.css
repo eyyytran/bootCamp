@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero {
+  width: 33%;
+  background: #f7f7f7;
+}
+
+.form {
+  height: 100%;
+  width: 66%;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.welcometext,
+.createaccounttext,
+.inputtitles,
+.footertext {
+  font-family: 'Open Sans', sans-serif;
+  color: #3b2924;
+}
+
+.welcometext {
+  font-size: 40px;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.createaccounttext {
+  font-size: 15px;
+
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.signupinputs {
+  margin: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.inputtitles {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#input-email-box,
+#create-password-box,
+#repeat-password-box {
+  margin: 0px;
+  padding: 0px;
+  width: 70%;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #3b2924;
+  background: #f7f7f7;
+}
+
+#submitbutton {
+  width: 15%;
+  height: 10%;
+  border-radius: 3px;
+  border: none;
+  background: #e1dcbb;
+}
+
+#heroimage {
+  height: auto;
+}
