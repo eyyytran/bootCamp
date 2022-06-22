@@ -165,11 +165,23 @@ hr {
 }
 
 .newsflashtext {
-  font-size: 10.8px;
+  font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .link {
   text-decoration: none;
+}
+
+#stargamesimage {
+  margin-left: 60px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.gamestext {
+  margin-top: 0px;
+  font-size: 12.8px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #maincontent {
@@ -189,10 +201,21 @@ hr {
 #news {
   margin: 12px;
   background-color: #ddde77;
-  height: 260px;
-  width: 160px;
+  height: 270px;
+  width: 157px;
+  border: 3px solid black;
+  border-top: 0;
+  border-left: 1;
+  position: relative;
 }
 
+.stupid-square-thing {
+  height: 60px;
+  width: 2px;
+  background-color: #ddde77;
+  position: absolute;
+  top: 2px;
+}
 .newstext {
   text-align: center;
   font-size: 14px;
@@ -209,7 +232,7 @@ hr {
   margin: 0px;
   text-align: center;
   color: gray;
-  font-size: 12px;
+  font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
