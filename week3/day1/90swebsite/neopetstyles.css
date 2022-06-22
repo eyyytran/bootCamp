@@ -133,11 +133,12 @@ hr {
 }
 
 .maincontent {
+  height: 463px;
+  width: 424px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 463px;
 }
 
 #kioskcat {
@@ -150,4 +151,16 @@ hr {
   background-color: #ddde77;
   height: 260px;
   width: 160px;
+}
+
+.newstext {
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#newsbuttons {
+  width: 144px;
+  display: flex;
+  flex-wrap: wrap;
 }
