@@ -73,6 +73,28 @@ body {
   border-right-color: black;
 }
 
+.rectangle {
+  height: 19px;
+  width: 103px;
+  background-color: #fdfe68;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  margin-top: 75px;
+  margin-left: 10px;
+}
+#searchtext {
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchbar {
+  height: 22px;
+  width: 60px;
+  margin-left: 10px;
+}
 #main {
   padding: 20px;
   display: flex;
@@ -163,4 +185,12 @@ hr {
   width: 144px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.footertext {
+  margin: 0px;
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
