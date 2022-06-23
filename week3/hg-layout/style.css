@@ -68,7 +68,7 @@ body {
     grid-area: 5 / 1 / 5 / span 4;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2.5fr 3fr 1fr;
