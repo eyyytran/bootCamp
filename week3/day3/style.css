@@ -1,0 +1,9 @@
+h1 {
+    color: #246012;
+}
+
+.numbers {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100px 200px;
+}
