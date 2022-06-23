@@ -1,88 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .hero {
-  height: 100%;
-  width: 33%;
-  background: #f7f7f7;
+    height: 100%;
+    width: 33%;
+    background: #f7f7f7;
 }
 
 .form {
-  height: 100%;
-  width: 66%;
-  background: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 5%;
-  padding-top: 5%;
+    height: 100%;
+    width: 66%;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-top: 5%;
 }
 
 .welcometext,
 .createaccounttext,
 .inputtitles,
 .footertext {
-  font-family: 'Open Sans', sans-serif;
-  color: #3b2924;
+    font-family: 'Open Sans', sans-serif;
+    color: #3b2924;
 }
 
 .welcometext {
-  font-size: 40px;
-  margin: 0px;
-  margin-left: 10px;
+    font-size: 40px;
+    margin: 0px;
+    text-align: center;
 }
 
 .createaccounttext {
-  font-size: 15px;
-
-  margin: 0px;
-  margin-left: 10px;
+    font-size: 15px;
+    margin: 0px;
+    text-align: center;
 }
 
 .signupinputs {
-  margin: 10px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .inputtitles {
-  font-size: 18px;
-  margin-bottom: 5px;
+    font-size: 18px;
+    margin: 0px;
 }
 
-#input-email-box,
-#create-password-box,
-#repeat-password-box {
-  margin: 0px;
-  padding: 0px;
-  width: 70%;
-  height: 40px;
-  border: none;
-  border-bottom: 2px solid #3b2924;
-  background: #f7f7f7;
+.inputfield {
+    margin: 0px;
+    padding-left: 10px;
+    width: 70%;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #3b2924;
+    background: #f7f7f7;
+    outline: none;
+}
+
+.inputfield:focus {
+    border-bottom-color: #74a12e;
+}
+
+.inputfield:focus::placeholder {
+    color: transparent;
 }
 
 #submitbutton {
-  width: 15%;
-  height: 10%;
-  border-radius: 3px;
-  border: none;
-  background: #e1dcbb;
+    width: 20%;
+    height: 50px;
+    border-radius: 3px;
+    border: none;
+    background: #e1dcbb;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#submitbutton:hover {
+    background-color: #979691;
+}
+
+#hero-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.link {
+    text-decoration: none;
 }
