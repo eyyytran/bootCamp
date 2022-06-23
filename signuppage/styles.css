@@ -108,3 +108,19 @@ body {
 .link {
     text-decoration: none;
 }
+
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .form {
+        height: 100%;
+        width: 100%;
+    }
+
+    .hero {
+        display: none;
+    }
+}
