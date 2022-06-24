@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Open+Sans&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif; */
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.grid-container {
+    height: 100vh;
+    width: 100vw;
+    background: #21252b;
+    display: grid;
+    grid-template-rows: 30px 1fr 1fr 1fr 1fr;
+}
+
+.header {
+    grid-area: 1;
+    height: 100%;
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    height: 100%;
+    width: 50%;
+    padding: 10px;
+}
+
+#netflixlogo {
+    height: inherit;
+    width: 20%;
+    object-fit: contain;
+}
+
+.nav {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+#introtext {
+    height: inherit;
+    width: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 9px;
+    margin: 3px;
+    padding-top: 20px;
+}
+
+#signin-button,
+#join-button {
+    height: 75%;
+    width: 20%;
+    border: none;
+    border-radius: 2px;
+    margin: 4px;
+    padding-bottom: 4px;
+}
+
+#signin-button {
+    background: black;
+    border: 1px solid white;
+}
+
+#join-button {
+    background: #e50914;
+}
+
+.links {
+    height: inherit;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 9px;
+}
+
+.titleslide {
+    height: 100%;
+    width: 100%;
+    grid-area: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 12px;
+}
+
+#titleheader {
+    padding-top: 20px;
+    margin: 5px;
+}
+
+#titlecontent {
+    height: 100%;
+    width: 35%;
+    margin: 5px;
+}
+
+.row1 {
+    height: 100%;
+    width: 100%;
+    grid-area: 3;
+}
+
+.row2 {
+    height: 100%;
+    width: 100%;
+    grid-area: 4;
+}
+
+.row3 {
+    height: 100%;
+    width: 100%;
+    grid-area: 5;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.categorytitles {
+    margin-bottom: 5px;
+}
+
+.category-title {
+    height: 20%;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 12px;
+}
+
+.movie-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    gap: 3px;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    flex-shrink: 0;
+    gap: 3px;
+}
+
+.thumbnails {
+    height: 100px;
+    width: 200px;
+    object-fit: fill;
+}
