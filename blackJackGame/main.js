@@ -1,9 +1,12 @@
-var gameState = {
-    gameStatus: 'init', //'init' or 'exit'
-    playerHand: [],
-    dealerHand: [],
-    gameDeck: [],
-    gameResult: null,
+class Game {
+    constructor() {
+        this.state = 'init' // 'init' or 'exit'
+        this.playerHand = []
+        this.dealerHand = []
+        this.gameDeck = []
+        this.gameResult = undefined // 'player bust' 'dealer bust'
+        this.wager = 0
+    }
 }
 
 class Card {
@@ -11,7 +14,7 @@ class Card {
         this.cardId = cardId
     }
 
-    getCardValue = () => {
+    getValue = () => {
         let value
         const cardsWorthTen = ['K', 'Q', 'J']
         if (!isNaN(this.cardId[0])) {
@@ -44,5 +47,5 @@ const makeDeck = () => {
 }
 
 const deck = makeDeck()
-console.log(deck[5])
-console.log(deck[5].getCardValue())
+console.log(deck[11])
+console.log(deck[11].getValue())
