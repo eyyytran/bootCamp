@@ -59,4 +59,4 @@ const allGoogleEmployees = [googleEmployee, noogleEmployess]
 allGoogleEmployees.forEach((emp) =>
     console.log(emp?.projects ? emp.projects[0] : emp.department)
 )
-// console.log(allGoogleEmployees)
+console.log(allGoogleEmployees)
