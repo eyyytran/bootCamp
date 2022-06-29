@@ -8,7 +8,20 @@
         <link defer rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div>Howdy</div>
+        <div>
+            <h1>Choose an animal</h1>
+            <select
+                onchange="console.log(event.target.value)"
+                name=""
+                id="animal-farm"
+            >
+                <option value="pig">pig</option>
+                <option value="dog">dog</option>
+                <option value="cat">cat</option>
+                <option value="chicken">chicken</option>
+            </select>
+            <div class="animal-noise"></div>
+        </div>
     </body>
-    <script src="app.js"></script>
+    <script src="animals.js"></script>
 </html>
