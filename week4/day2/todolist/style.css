@@ -20,16 +20,19 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: peachpuff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: var(--teal-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .decorative-container {
@@ -41,17 +44,13 @@ body {
 }
 
 .main-container {
-    height: 400px;
+    min-height: 400px;
     width: 400px;
     padding: 0px;
+    padding-bottom: 15px;
     background: white;
     border-radius: 10px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 4fr;
-    gap: 0px;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
+
     text-align: center;
     color: var(--dark-blue);
 }
@@ -61,24 +60,22 @@ h1 {
     width: 100%;
     margin: 0px;
     padding: 10px;
-    grid-row: 1;
     /* border: 3px solid purple; */
 }
 
 .inputfield {
     width: 100%;
-    padding: 10px;
-    grid-row: 2;
+    padding: 0 10px;
     /* border: 3px solid greenyellow; */
 }
 
-#taskcontainer {
-    grid-row: 3;
-    /* border: 3px solid red; */
+.item {
+    margin: 0;
+    margin-top: 15px;
 }
 
 .checkButton,
-.strikeButton,
+.deleteButton,
 #submit {
     border-radius: 10px;
     border: none;
@@ -87,16 +84,13 @@ h1 {
     height: 20px;
     margin: 5px;
     color: var(--dark-blue);
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
 }
 
 .checkButton {
     background: var(--teal-blue);
 }
 
-.strikeButton {
+.deleteButton {
     background: var(--blood-orange);
 }
 
