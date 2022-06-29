@@ -32,15 +32,19 @@ body {
     align-items: center;
 }
 
+.decorative-container {
+    background: var(--orange);
+    border: 15px solid var(--orange);
+    outline: 10px solid var(--blood-orange);
+    box-shadow: 10px 10px 0px 10px var(--dark-blue);
+    border-radius: 10px;
+}
+
 .main-container {
     height: 400px;
     width: 400px;
     padding: 0px;
     background: white;
-    position: relative;
-    border: 15px solid var(--orange);
-    outline: 10px solid var(--blood-orange);
-    box-shadow: 10px 10px 0px 10px var(--dark-blue);
     border-radius: 10px;
     display: grid;
     grid-template-rows: 1fr 1fr 4fr;
@@ -49,51 +53,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-}
-
-.stupidcorner1 {
-    height: 20px;
-    width: 20px;
-    background: var(--orange);
-    position: absolute;
-    top: -5px;
-    left: -5px;
-}
-
-.stupidcorner1T {
-    height: 20px;
-    width: 20px;
-    background: white;
-    border-top-left-radius: 10px;
-    position: absolute;
-    top: -2px;
-    left: -1px;
-}
-
-.stupidcorner2 {
-    height: 20px;
-    width: 20px;
-    background: red;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-}
-.stupidcorner3 {
-    height: 20px;
-    width: 20px;
-    background: red;
-    position: absolute;
-    bottom: -5px;
-    left: -5px;
-}
-
-.stupidcorner4 {
-    height: 20px;
-    width: 20px;
-    background: red;
-    position: absolute;
-    bottom: -5px;
-    right: -5px;
 }
 
 h1 {
