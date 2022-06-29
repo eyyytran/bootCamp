@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Farm Dex</title>
+        <link defer rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="decorative-container">
+                <div class="module-container">
+                    <h1>Pokedex</h1>
+                    <select
+                        onchange="console.log(event.target.value)"
+                        id="pokemon"
+                    >
+                        <option value="null">Select a Pokemon</option>
+                        <option value="wooloo">Wooloo</option>
+                        <option value="miltank">Miltank</option>
+                        <option value="tauros">Tauros</option>
+                        <option value="lechonk">Lechonk</option>
+                        <option value="mareep">Mareep</option>
+                    </select>
+                    <div id="pokemon-card"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>

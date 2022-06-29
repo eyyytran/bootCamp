@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Open+Sans&family=Roboto&display=swap');
+
+:root {
+    --red: #e63946;
+    --white: #f1faee;
+    --lightblue: #a8dadc;
+    --blue: #457b9d;
+    --darkblue: #1d3557;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0px;
+    padding-top: 20px;
+    background: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.decorative-container {
+    min-height: 400px;
+    width: 400px;
+    background: var(--red);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 5px var(--darkblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.module-container {
+    min-height: 380px;
+    width: 380px;
+    background: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#pokemon {
+    background: white;
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    padding-left: 10px;
+}
+
+#pokemon-card {
+    margin-top: 40px;
+    height: 200px;
+    width: 150px;
+    border: 3px solid var(--darkblue);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 10px var(--lightblue) inset;
+    background: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.art {
+    height: 70px;
+    width: 120px;
+    object-fit: contain;
+}
+
+.header {
+    height: 40px;
+    width: inherit;
+    color: var(--darkblue);
+    text-align: center;
+    font-size: 12px;
+}
+
+.description {
+    height: 80px;
+    width: inherit;
+    font-size: 10px;
+    padding: 10px;
+    text-align: left;
+}
