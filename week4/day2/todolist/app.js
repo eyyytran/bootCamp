@@ -1,31 +1,35 @@
-const userInput = document.getElementById('input')
 const submitButton = document.getElementById('submit')
 const input = document.getElementById('input')
-// const checkButton = document.getElementsByClassName('checkButton')
-// const strikeButton = document.getElementsByClassName('strikeButton')
 const item = document.getElementsByClassName('item')
+const taskList = document.getElementById('task-container')
 
 const createToDo = () => {
-    const checkButton = document.createElement('button')
-    const strikeButton = document.createElement('button')
     const newItem = document.createElement('p')
-    const taskList = document.getElementById('task-container')
     newItem.innerHTML = input.value
-    checkButton.innerHTML = '✓'
-    strikeButton.innerHTML = 'x'
     newItem.classList.add('item')
+
+    const checkButton = document.createElement('button')
+    checkButton.innerHTML = '✓'
     checkButton.classList.add('checkButton')
+
+    const strikeButton = document.createElement('button')
+    strikeButton.innerHTML = 'x'
     strikeButton.classList.add('strikeButton')
-    taskList.appendChild(newItem)
+
     newItem.appendChild(checkButton)
     newItem.appendChild(strikeButton)
+    taskList.appendChild(newItem)
+
+    input.value = ''
+    input.focus()
+
+    checkButton.addEventListener('click', () => {
+        newItem.style = 'text-decoration:line-through;'
+    })
+
+    strikeButton.addEventListener('click', () => {
+        taskList.removeChild(newItem)
+    })
 }
 
 submitButton.addEventListener('click', createToDo)
-
-checkButton.addEventListener('click', () => {
-    console.log(item)
-    item[0].style.textDecoration = 'line-through'
-})
-
-strikeButton.addEventListener('click', () => console.log('clicked'))
