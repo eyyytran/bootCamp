@@ -107,7 +107,3 @@ h1 {
     border: 1px solid var(--dark-blue);
     padding-left: 10px;
 }
-
-#completeitem {
-    text-decoration: line-through;
-}

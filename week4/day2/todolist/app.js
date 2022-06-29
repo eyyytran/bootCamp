@@ -1,11 +1,13 @@
 const userInput = document.getElementById('input')
 const submitButton = document.getElementById('submit')
 const input = document.getElementById('input')
-const checkButton = document.createElement('button')
-const strikeButton = document.createElement('button')
+// const checkButton = document.getElementsByClassName('checkButton')
+// const strikeButton = document.getElementsByClassName('strikeButton')
 const item = document.getElementsByClassName('item')
 
 const createToDo = () => {
+    const checkButton = document.createElement('button')
+    const strikeButton = document.createElement('button')
     const newItem = document.createElement('p')
     const taskList = document.getElementById('task-container')
     newItem.innerHTML = input.value
