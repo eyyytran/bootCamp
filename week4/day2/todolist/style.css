@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Open+Sans&family=Roboto&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+:root {
+    --dark-blue: #264653;
+    --teal-blue: #2a9d8f;
+    --mustard: #e9c46a;
+    --orange: #f4a261;
+    --blood-orange: #e76f51;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: peachpuff;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--teal-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    height: 400px;
+    width: 400px;
+    padding: 0px;
+    background: white;
+    position: relative;
+    border: 15px solid var(--orange);
+    outline: 10px solid var(--blood-orange);
+    box-shadow: 10px 10px 0px 10px var(--dark-blue);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr;
+    gap: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.stupidcorner1 {
+    height: 20px;
+    width: 20px;
+    background: var(--orange);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.stupidcorner1T {
+    height: 20px;
+    width: 20px;
+    background: white;
+    border-top-left-radius: 10px;
+    position: absolute;
+    top: -2px;
+    left: -1px;
+}
+
+.stupidcorner2 {
+    height: 20px;
+    width: 20px;
+    background: red;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.stupidcorner3 {
+    height: 20px;
+    width: 20px;
+    background: red;
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+}
+
+.stupidcorner4 {
+    height: 20px;
+    width: 20px;
+    background: red;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+}
+
+h1 {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    grid-row: 1;
+    /* border: 3px solid purple; */
+}
+
+.inputfield {
+    width: 100%;
+    padding: 10px;
+    grid-row: 2;
+    /* border: 3px solid greenyellow; */
+}
+
+#taskcontainer {
+    grid-row: 3;
+    /* border: 3px solid red; */
+}
+
+.taskbutton,
+#submit {
+    border-radius: 5;
+    width: 58px;
+    height: 20px;
+}

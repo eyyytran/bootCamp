@@ -1,7 +1,7 @@
 const userInput = document.getElementById('input')
 const submitButton = document.getElementById('submit')
 const input = document.getElementById('input')
-let counter = 1
+// let counter = 1
 
 const createToDo = () => {
     const newItem = document.createElement('p')
@@ -9,15 +9,14 @@ const createToDo = () => {
     const strikeButton = document.createElement('button')
     const taskList = document.getElementById('task-container')
     newItem.innerHTML = input.value
-    checkButton.innerHTML = 'Put Check'
+    checkButton.innerHTML = '✓'
     strikeButton.innerHTML = 'Put X'
     newItem.classList.add('item')
-    // checkButton.classList.add('checkButton' + toString(counter))
-    // strikeButton.classList.add('strikeButton' + toString(counter))
-    // let counter = counter++
+    checkButton.classList.add('taskButton')
+    strikeButton.classList.add('taskButton')
+    taskList.appendChild(newItem)
     newItem.appendChild(checkButton)
     newItem.appendChild(strikeButton)
-    taskList.appendChild(newItem)
 }
 
 submitButton.addEventListener('click', createToDo)
