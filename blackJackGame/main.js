@@ -30,6 +30,10 @@ class Card {
     setValue = (newValue) => {
         this.value = newValue
     }
+
+    print = () => {
+        console.log(this.cardId)
+    }
 }
 
 const makeDeck = () => {
@@ -47,5 +51,17 @@ const makeDeck = () => {
 }
 
 const deck = makeDeck()
-console.log(deck[11])
-console.log(deck[11].getValue())
+
+const printDeck = (deck, message = '') => {
+    const result = []
+    deck.forEach((card) => result.push(card.cardId))
+    console.log(message, result.join(', '))
+}
+
+printDeck(deck, 'initial state: ')
+
+const currentCard = deck.pop()
+
+currentCard.print()
+
+printDeck(deck, 'after one pop')
