@@ -39,7 +39,21 @@ class Card {
 const makeDeck = () => {
     cards = []
     let suits = ['H', 'S', 'C', 'D']
-    let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'J', 'Q', 'K', 'A']
+    let ranks = [
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        'J',
+        'Q',
+        'K',
+        'A',
+    ]
     for (let suitCounter = 0; suitCounter < suits.length; suitCounter++) {
         for (rankCounter = 0; rankCounter < ranks.length; rankCounter++) {
             let cardId = ranks[rankCounter] + suits[suitCounter]
