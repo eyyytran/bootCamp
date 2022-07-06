@@ -6,6 +6,9 @@
     --lightblue: #01dbff;
     --green: #30f454;
     --alarmred: #fe1a55;
+    --royalblue: #0c1a57;
+    --midnight: #000850;
+    --artichoke: #294e61;
 }
 
 body {
@@ -30,7 +33,7 @@ body {
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    box-shadow: -10px 10px 5px 3px var(--darkviolet);
+    box-shadow: -10px 10px 1px 3px var(--darkviolet);
 }
 
 .centerfold {
@@ -43,7 +46,8 @@ body {
     left: 50.5%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    box-shadow: inset -10px -5px black;
+    box-shadow: -5px 10px 0px 3px var(--darkviolet);
+    border-right: 6px solid #fe7599;
 }
 
 .topcss {
@@ -141,8 +145,9 @@ body {
     width: 50px;
     border-radius: 25px;
     background-color: var(--lightblue);
-    box-shadow: 0px 0px 0px 8px var(--grey);
+    box-shadow: inset -10px 2px 1px 1px #adf3ff;
     border: 3px solid var(--darkviolet);
+    outline: 8px solid var(--grey);
     position: absolute;
     top: 10px;
     left: 12px;
@@ -165,10 +170,10 @@ body {
     height: 210px;
     width: 300px;
     border-radius: 10px;
-    border-top: 20px solid gray;
-    border-left: 15px solid gray;
-    border-right: 15px solid gray;
-    border-bottom: 30px solid gray;
+    border-top: 20px solid var(--grey);
+    border-left: 15px solid var(--grey);
+    border-right: 15px solid var(--grey);
+    border-bottom: 30px solid var(--grey);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +181,51 @@ body {
 
 .right-side {
     grid-column: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+}
+
+#input-field {
+    height: 80px;
+    width: 300px;
+    margin-left: 50px;
+    position: absolute;
+    top: 200px;
+    right: 45px;
+    border-radius: 10px;
+    border: 5px solid var(--midnight);
+    background: var(--royalblue);
+    color: var(--green);
+    padding-left: 28%;
+}
+
+#submit-button {
+    position: absolute;
+    top: 300px;
+    right: 45px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--darkviolet);
+    background-color: yellow;
+    box-shadow: -1px 1px 0px 1px var(--darkviolet);
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    transform: scale(1.06);
+}
+
+.previous-guesses {
+    position: absolute;
+    top: 290px;
+    right: 150px;
+}
+
+.pg {
+    background: var(--grey);
+    height: 30px;
+    width: 180px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: -5px 5px 0px 1px var(--darkviolet);
 }
