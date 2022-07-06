@@ -9,6 +9,9 @@ const guess1 = document.querySelector('#guess1')
 const guess2 = document.querySelector('#guess2')
 const guess3 = document.querySelector('#guess3')
 const guess4 = document.querySelector('#guess4')
+const prevguess1 = document.querySelector('#p1')
+const prevguess2 = document.querySelector('#p2')
+const prevguess3 = document.querySelector('#p3')
 
 let counter = 1
 
@@ -31,16 +34,19 @@ const guessPokemon = async () => {
     if (guess === answerBox.innerHTML) {
         alert("You're right!")
     } else {
-        alert('Wrong Answer - Try Again')
         if (counter === 1) {
             guess1.style.background = 'var(--alarmred)'
+            prevguess1.innerHTML = guess
         } else if (counter === 2) {
             guess2.style.background = 'var(--alarmred)'
+            prevguess2.innerHTML = guess
         } else if (counter === 3) {
             guess3.style.background = 'var(--alarmred)'
+            prevguess3.innerHTML = guess
         } else if (counter === 4) {
             guess4.style.background = 'var(--alarmred)'
-        } else alert('Sorry Joey')
+            alert('Sorry Joey')
+        }
         counter++
     }
 }
