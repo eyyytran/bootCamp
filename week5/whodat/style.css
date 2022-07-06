@@ -179,6 +179,28 @@ body {
     align-items: center;
 }
 
+.clues {
+    position: absolute;
+    top: 350px;
+    left: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    color: var(--midnight);
+}
+
+.clue {
+    height: 20px;
+    width: 50px;
+    border-radius: 5px;
+    background: var(--artichoke);
+    margin: 20px;
+    padding-top: 3px;
+    box-shadow: -2px 2px 0px 1px var(--midnight);
+}
+
 .right-side {
     grid-column: 2;
     position: relative;
