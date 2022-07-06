@@ -33,13 +33,13 @@ const guessPokemon = async () => {
     } else {
         alert('Wrong Answer - Try Again')
         if (counter === 1) {
-            guess1.style.background = 'red'
+            guess1.style.background = 'var(--alarmred)'
         } else if (counter === 2) {
-            guess2.style.background = 'red'
+            guess2.style.background = 'var(--alarmred)'
         } else if (counter === 3) {
-            guess3.style.background = 'red'
+            guess3.style.background = 'var(--alarmred)'
         } else if (counter === 4) {
-            guess4.style.background = 'red'
+            guess4.style.background = 'var(--alarmred)'
         } else alert('Sorry Joey')
         counter++
     }
