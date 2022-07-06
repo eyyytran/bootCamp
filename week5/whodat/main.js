@@ -72,7 +72,6 @@ const getImage = json => {
     const makeImg = document.createElement('img')
     makeImg.src = `${json.sprites.front_default}`
     makeImg.classList = 'guessImage'
-
     imageField.append(makeImg)
 }
 
