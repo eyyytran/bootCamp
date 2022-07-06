@@ -9,17 +9,29 @@
         <script defer src="./weather.js"></script>
     </head>
     <body>
+        <div class="background-img"></div>
         <div class="container">
-            <div class="user-input">
-                <input
-                    type="text"
-                    id="user-input"
-                    placeholder="Zip Code or City, State"
-                />
-                <button type="submit" id="submit-button">Submit</button>
-            </div>
+            <div class="left-side">           
             <div id="header"></div>
-            <div id="result-module"></div>
+            </div>
+            <div class="right-side">
+                <div class="user-input">
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Zip Code or City, State"
+                    />
+                    <button type="submit" id="submit-button">
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg"
+                        alt="magnifying glass button"
+                        id="magnifying-glass"
+                    />
+                    </button>
+                </div>
+                <div id="main-module"></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

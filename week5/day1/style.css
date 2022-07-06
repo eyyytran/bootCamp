@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Open+Sans&family=Roboto&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.background-img {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('https://images.unsplash.com/photo-1531496080470-6e895c9af2ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+    background-repeat: none;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.left-side {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side:hover {
+    transform: scale(1.1);
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.weather-icon-text {
+    font-size: 18px;
+}
+
+.temperature {
+    font-size: 40px;
+}
+
+.right-side {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px) opacity(1);
+    padding: 10px;
+}
+
+.user-input {
+    grid-row: 1;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#user-input {
+    width: 80%;
+    height: 30px;
+    padding-left: 5px;
+    border: none;
+    background: none;
+    color: white;
+}
+
+#user-input:focus::placeholder {
+    color: transparent;
+}
+
+#submit-button {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    border: none;
+    background: none;
+    border-radius: 25px;
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+#magnifying-glass {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+#main-module {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 50px, 1fr);
+}
+/* 
+.feels {
+    grid-row: 1;
+}
+
+.weather-desc {
+    grid-row: 2;
+}
+
+.sun-rise {
+    grid-row: 3;
+}
+
+.sun-set {
+    grid-row: 4;
+}
+
+.humidity {
+    grid-row: 5;
+}
+
+.wind {
+    grid-row: 7;
+} */
