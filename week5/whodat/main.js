@@ -5,7 +5,12 @@
 const inputField = document.querySelector('#input-field')
 const submitBtn = document.querySelector('#submit-button')
 const imageField = document.querySelector('.image-field')
-const guessImage = document.querySelector('guessImage')
+const guess1 = document.querySelector('#guess1')
+const guess2 = document.querySelector('#guess2')
+const guess3 = document.querySelector('#guess3')
+const guess4 = document.querySelector('#guess4')
+
+let counter = 1
 
 const getRandomInt = () => {
     return (randomInt = Math.floor(Math.random() * 810))
@@ -22,19 +27,40 @@ const guessPokemon = async () => {
     const pokedex = await fetch(url)
     const pokemon = await pokedex.json()
     const guess = pokemon.name
-    console.log(guess)
+    const answerBox = document.querySelector('.hidden')
+    if (guess === answerBox.innerHTML) {
+        alert("You're right!")
+    } else {
+        alert('Wrong Answer - Try Again')
+        if (counter === 1) {
+            guess1.style.background = 'red'
+        } else if (counter === 2) {
+            guess2.style.background = 'red'
+        } else if (counter === 3) {
+            guess3.style.background = 'red'
+        } else if (counter === 4) {
+            guess4.style.background = 'red'
+        } else alert('Sorry Joey')
+        counter++
+    }
 }
 
 const getRandomPokemon = async () => {
     getRandomInt()
     url = `https://pokeapi.co/api/v2/pokemon/${randomInt}`
     const res = await fetch(url)
-    const json = await res.json()
-    return json
-    // getImage(json)
+    json = await res.json()
+    getImage(json)
+    getHiddenImage(json)
 }
 
-console.log(getRandomPokemon())
+const getHiddenImage = json => {
+    const makeDiv = document.createElement('div')
+    makeDiv.innerHTML = json.name
+    makeDiv.classList = 'hidden'
+    makeDiv.style.display = 'none'
+    imageField.append(makeDiv)
+}
 
 const getImage = json => {
     const makeImg = document.createElement('img')
