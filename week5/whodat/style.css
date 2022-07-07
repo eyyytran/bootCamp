@@ -17,6 +17,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
+    overflow: scroll;
 }
 
 * {
@@ -376,6 +377,11 @@ body {
         color: var(--midnight);
     }
 
+    .module {
+        left: 40px;
+        top: 360px;
+    }
+
     .right-side {
         grid-column: none;
         border-radius: 0px;
@@ -395,6 +401,9 @@ body {
         top: 200px;
     }
 
+    #reset-button {
+        top: 270px;
+    }
     .previous-guesses {
         top: 190px;
     }
