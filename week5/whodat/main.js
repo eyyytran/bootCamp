@@ -78,6 +78,7 @@ const getImage = json => {
 }
 
 const resetGame = () => {
+    counter = 1
     imageField.innerHTML = null
 
     guess1.style.background = 'var(--green)'
@@ -90,6 +91,7 @@ const resetGame = () => {
     prevguess3.innerHTML = null
 
     module.innerHTML = null
+
     getRandomPokemon()
 }
 
