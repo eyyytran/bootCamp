@@ -4,11 +4,13 @@
 
 const inputField = document.querySelector('#input-field')
 const submitBtn = document.querySelector('#submit-button')
+const resetBtn = document.querySelector('#reset-button')
 const imageField = document.querySelector('.image-field')
 const guess1 = document.querySelector('#guess1')
 const guess2 = document.querySelector('#guess2')
 const guess3 = document.querySelector('#guess3')
 const guess4 = document.querySelector('#guess4')
+const module = document.querySelector('.module')
 const prevguess1 = document.querySelector('#p1')
 const prevguess2 = document.querySelector('#p2')
 const prevguess3 = document.querySelector('#p3')
@@ -32,7 +34,7 @@ const guessPokemon = async () => {
     const guess = pokemon.name
     const answerBox = document.querySelector('.hidden')
     if (guess === answerBox.innerHTML) {
-        alert("You're right!")
+        module.innerHTML = `You're right! It's ${guess}!`
     } else {
         if (counter === 1) {
             guess1.style.background = 'var(--alarmred)'
@@ -45,7 +47,7 @@ const guessPokemon = async () => {
             prevguess3.innerHTML = guess
         } else if (counter === 4) {
             guess4.style.background = 'var(--alarmred)'
-            alert('Sorry Joey')
+            module.innerHTML = `Sorry Joey... It's ${answerBox.innerHTML}!`
         }
         counter++
     }
@@ -75,6 +77,34 @@ const getImage = json => {
     imageField.append(makeImg)
 }
 
-submitBtn.addEventListener('click', () => guessPokemon())
+const resetGame = () => {
+    imageField.innerHTML = null
+
+    guess1.style.background = 'var(--green)'
+    guess2.style.background = 'var(--green)'
+    guess3.style.background = 'var(--green)'
+    guess4.style.background = 'var(--green)'
+
+    prevguess1.innerHTML = null
+    prevguess2.innerHTML = null
+    prevguess3.innerHTML = null
+
+    module.innerHTML = null
+    getRandomPokemon()
+}
+
+submitBtn.addEventListener('click', () => {
+    guessPokemon()
+    inputField.value = ''
+})
+
+inputField.addEventListener('keypress', ({ key }) => {
+    if (key === 'Enter') {
+        guessPokemon()
+        inputField.value = ''
+    }
+})
+
+resetBtn.addEventListener('click', () => resetGame())
 
 window.addEventListener('DOMContentLoaded', getRandomPokemon())
