@@ -1,4 +1,3 @@
-//The title of the app is self explanatory. The user will get a random part of an image of a pokemon, and they will have four guesses to get it correct. They will receive clues as to whether or not they have the right type, gen, etc. I hope to have the search with the image and at least one clue done by end of day.
 //API only goes up to gen 7 NDex#809
 // url = `https://pokeapi.co/api/v2/pokemon/${pokemon_name}`
 
@@ -10,11 +9,12 @@ const guess1 = document.querySelector('#guess1')
 const guess2 = document.querySelector('#guess2')
 const guess3 = document.querySelector('#guess3')
 const guess4 = document.querySelector('#guess4')
+const type1 = document.querySelector('#type1')
 const module = document.querySelector('.module')
 const prevguess1 = document.querySelector('#p1')
 const prevguess2 = document.querySelector('#p2')
 const prevguess3 = document.querySelector('#p3')
-
+const pokemonInfo = []
 let counter = 1
 
 const getRandomInt = () => {
@@ -32,12 +32,14 @@ const guessPokemon = async () => {
     const pokedex = await fetch(url)
     const pokemon = await pokedex.json()
     const guess = pokemon.name
-    const answerBox = document.querySelector('.hidden')
-    if (guess === answerBox.innerHTML) {
-        module.innerHTML = `You're right! It's ${guess}!`
+    console.log(pokemon.types[0].type.name)
+    console.log(pokemonInfo[1])
+    if (guess === pokemonInfo[0]) {
+        module.innerHTML = `You're right! It's ${pokemonInfo[0]}!`
     } else {
         if (counter === 1) {
             guess1.style.background = 'var(--alarmred)'
+            handleType1(pokemon)
             prevguess1.innerHTML = guess
         } else if (counter === 2) {
             guess2.style.background = 'var(--alarmred)'
@@ -53,22 +55,31 @@ const guessPokemon = async () => {
     }
 }
 
+const handleType1 = pokemon => {
+    if (pokemon.types[0].type.name === pokemonInfo[1]) {
+        type1.style.background = 'var(--green)'
+    } else {
+        type1.style.background = 'var(--alarmred)'
+    }
+}
+
 const getRandomPokemon = async () => {
     getRandomInt()
     url = `https://pokeapi.co/api/v2/pokemon/${randomInt}`
     const res = await fetch(url)
     json = await res.json()
     getImage(json)
-    getHiddenImage(json)
+    getPokemonInfo(json)
 }
 
-const getHiddenImage = json => {
-    const makeDiv = document.createElement('div')
-    makeDiv.innerHTML = json.name
-    makeDiv.classList = 'hidden'
-    makeDiv.style.display = 'none'
-    imageField.append(makeDiv)
+const getPokemonInfo = json => {
+    pokemonInfo.push(json.name)
+    for (type in json.types) {
+        pokemonInfo.push(json.types[type].type.name)
+    }
+    return pokemonInfo
 }
+console.log(pokemonInfo)
 
 const getImage = json => {
     const makeImg = document.createElement('img')
