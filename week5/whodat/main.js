@@ -10,11 +10,12 @@ const guess2 = document.querySelector('#guess2')
 const guess3 = document.querySelector('#guess3')
 const guess4 = document.querySelector('#guess4')
 const type1 = document.querySelector('#type1')
+const type2 = document.querySelector('#type2')
 const module = document.querySelector('.module')
 const prevguess1 = document.querySelector('#p1')
 const prevguess2 = document.querySelector('#p2')
 const prevguess3 = document.querySelector('#p3')
-const pokemonInfo = []
+let pokemonInfo = []
 let counter = 1
 
 const getRandomInt = () => {
@@ -32,6 +33,7 @@ const guessPokemon = async () => {
     const pokedex = await fetch(url)
     const pokemon = await pokedex.json()
     const guess = pokemon.name
+    console.log(pokemon)
     console.log(pokemon.types[0].type.name)
     console.log(pokemonInfo[1])
     if (guess === pokemonInfo[0]) {
@@ -43,12 +45,15 @@ const guessPokemon = async () => {
             prevguess1.innerHTML = guess
         } else if (counter === 2) {
             guess2.style.background = 'var(--alarmred)'
+            handleType1(pokemon)
             prevguess2.innerHTML = guess
         } else if (counter === 3) {
             guess3.style.background = 'var(--alarmred)'
+            handleType1(pokemon)
             prevguess3.innerHTML = guess
         } else if (counter === 4) {
             guess4.style.background = 'var(--alarmred)'
+            handleType1(pokemon)
             module.innerHTML = `Sorry Joey... It's ${answerBox.innerHTML}!`
         }
         counter++
@@ -56,13 +61,28 @@ const guessPokemon = async () => {
 }
 
 const handleType1 = pokemon => {
+    console.log(pokemon.types[0], pokemonInfo[1])
     if (pokemon.types[0].type.name === pokemonInfo[1]) {
+        console.log('this')
         type1.style.background = 'var(--green)'
-    } else {
+        type1.textContent = `${pokemonInfo[1]}`
+    }
+    if (pokemon.types[0].type.name === pokemonInfo[2]) {
         type1.style.background = 'var(--alarmred)'
+        type1.textContent = `${pokemon.types[0].type.name}`
+        type2.style.background = 'var(--green)'
+        type2.textContent = `${pokemonInfo[2]}`
+    } else if (!pokemon.types[0].type.name === pokemonInfo[1]) {
+        console.log('that')
+        type1.style.background = 'var(--alarmred)'
+        type1.textContent = `${pokemon.types[0].type.name}`
+    }
+    if (pokemon.types[1].type.name === pokemonInfo[1]) {
+        console.log('this')
+        type1.style.background = 'var(--green)'
+        type1.textContent = `${pokemonInfo[1]}`
     }
 }
-
 const getRandomPokemon = async () => {
     getRandomInt()
     url = `https://pokeapi.co/api/v2/pokemon/${randomInt}`
@@ -77,9 +97,9 @@ const getPokemonInfo = json => {
     for (type in json.types) {
         pokemonInfo.push(json.types[type].type.name)
     }
+    console.log(pokemonInfo)
     return pokemonInfo
 }
-console.log(pokemonInfo)
 
 const getImage = json => {
     const makeImg = document.createElement('img')
@@ -91,6 +111,7 @@ const getImage = json => {
 const resetGame = () => {
     counter = 1
     imageField.innerHTML = null
+    pokemonInfo = []
 
     guess1.style.background = 'var(--green)'
     guess2.style.background = 'var(--green)'
