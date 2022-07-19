@@ -5,10 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link defer rel="stylesheet" href="style.css" />
+        <script defer src="hello.js"></script>
     </head>
     <body>
         <div class="container">
             <h1>Wassup</h1>
+            <p>${user.name}</p>
+            <p>Our teacher's name is ${teacher}.</p>
+            <p>We have two students in our class and their names are:</p>
+            <div>
+                ${students.map(student => `
+                <h2>${student}</h2>
+                `).join('')}.
+            </div>
+            <input type="text" name="" id="user-input" />
+            <button type="submit" id="submit-button">submit</button>
         </div>
     </body>
 </html>
