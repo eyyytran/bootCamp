@@ -4,7 +4,6 @@ import * as dns from 'dns'
 import * as readline from 'readline'
 import * as fs from 'fs'
 
-import test from 'node:test'
 const PORT = 3000
 const app = express()
 
@@ -43,6 +42,8 @@ userInput.question('Input File: ', file1 => {
             userInput.close()
             return
         }
+        data = data.toString()
+        data = data.toUpperCase()
         userInput.question('Output File: ', file2 => {
             if (error) {
                 console.log(`this file does not exist, ${file2}`)
