@@ -58,13 +58,6 @@ module.exports = {
                     createdAt: new Date(),
                     updatedAt: new Date(),
                 },
-                {
-                    name: 'Karma Too High',
-                    email: 'kamakama@gmail.com',
-                    karma: 9,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                },
             ],
             {}
         )

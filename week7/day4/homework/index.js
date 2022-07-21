@@ -1,5 +1,5 @@
 const express = require('express')
-const creds = require('./server/databaseConnection.js')
+
 const { Restaurants, Reviewers, Reviews } = require('./models')
 const app = express()
 const PORT = process.env.PORT || 3000
