@@ -58,10 +58,10 @@ router.post('/login', async (req, res) => {
     }
 })
 
-router.post('/update_password', async (req, res) => {
+router.put('/update_password', async (req, res) => {
     const { username, password } = req.body
     try {
-        const findUser = await User.findOne({
+        const findUser = await encryption.findOne({
             where: {
                 username: username,
             },
@@ -69,43 +69,36 @@ router.post('/update_password', async (req, res) => {
         try {
             const salt = await bcrypt.genSalt(5)
             const hashedPassword = await bcrypt.hash(password, salt)
-            const updatedUser = await User.update(req.body, {
-                where: {
-                    username: username,
-                    password: hashedPassword,
-                    updatedAt: new Date(),
-                },
+            findUser.password = hashedPassword
+            findUser.update({
+                username: username,
+                password: hashedPassword,
+                updateAt: new Date(),
             })
-            res.status(200).send('Password Updated')
+            res.send('Updated password')
         } catch (error) {
-            res.status(400).send('Unable to update password')
+            console.log(error)
+            res.status(400).send(error)
         }
     } catch (error) {
-        res.send('Unable to find user')
+        console.log(error)
+        res.status(400).send(error)
     }
 })
 
-router.post('/delete_user', async (req, res) => {
-    const { username, password } = req.body
+router.delete('/delete_password', async (req, res) => {
+    const { username } = req.body
     try {
-        const findUser = await User.findOne(req.body, {
+        const findUser = await User.findOne({
             where: {
                 username: username,
             },
         })
-        const foundUser = findUser.dataValues
-        const validated = await bcrypt.compare(password, foundUser.password)
-
-        if (validated === false) {
-            res.status(400).send('Wrong password')
-        } else {
-            const deleteUser = await User.destroy({
-                username: username,
-            })
-            res.status(200).send('Successfully deleted user')
-        }
+        findUser.destroy()
+        res.send('User deleted')
     } catch (error) {
-        res.send('I did not find it')
+        console.log(error)
+        res.status(400).send(error)
     }
 })
 
