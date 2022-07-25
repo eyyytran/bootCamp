@@ -1,4 +1,4 @@
-const { Restaurants } = require('../../models')
+const { Restaurants } = require('../../database/models')
 const express = require('express')
 const bcrypt = require('bcrypt')
 const router = express.Router()
@@ -12,7 +12,7 @@ router.get('/all_restaurants', async (req, res) => {
     }
 })
 
-router.get('/by_id/', async (req, res) => {
+router.get('/find_by_id/', async (req, res) => {
     const { id } = req.body
     try {
         const restaurantsToGet = await Restaurants.findAll({
@@ -26,7 +26,7 @@ router.get('/by_id/', async (req, res) => {
     }
 })
 
-router.get('/by_name/', async (req, res) => {
+router.get('/find_by_name/', async (req, res) => {
     const { name } = req.body
     try {
         const restaurantsToGet = await Restaurants.findAll({
@@ -40,7 +40,7 @@ router.get('/by_name/', async (req, res) => {
     }
 })
 
-router.get('/by_address/', async (req, res) => {
+router.get('/find_by_address/', async (req, res) => {
     const { address } = req.body
     try {
         const restaurantsToGet = await Restaurants.findAll({
@@ -74,7 +74,6 @@ router.put('/update_name', async (req, res) => {
             },
         })
         try {
-            findRestaurant.name = newName
             findRestaurant.update({
                 name: newName,
             })
@@ -98,7 +97,6 @@ router.put('/update_address', async (req, res) => {
             },
         })
         try {
-            findRestaurant.address = newAddress
             findRestaurant.update({
                 address: newAddress,
             })
