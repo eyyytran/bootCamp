@@ -1,4 +1,5 @@
 const express = require('express')
+const app = express()
 const router = express.Router()
 
 router.post('/make_pets', (req, res) => {
@@ -6,7 +7,7 @@ router.post('/make_pets', (req, res) => {
 })
 
 router.get('/get_pets', (req, res) => {
-    res.send('got pets')
+    res.render('index.html')
 })
 
 router.put('/update_pets', (req, res) => {
