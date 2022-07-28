@@ -20,6 +20,16 @@ app.use(
     })
 )
 
+const checkLogin = (req, res, next) => {
+    if (req.session.user) {
+        next() //literally says thank you next
+    } else {
+        res.json({
+            message: 'You need to be logged in.',
+        })
+    }
+}
+
 app.post('/login', async (req, res) => {
     // console.log(req.session)
     const user = await Users.findOne({
@@ -40,6 +50,10 @@ app.post('/login', async (req, res) => {
             message: 'Login Failed',
         })
     }
+})
+
+app.post('/delete_all_secrets', checkLogin, async (req, res) => {
+    res.send('Omg you deleted everything...')
 })
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
