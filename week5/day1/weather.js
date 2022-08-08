@@ -1,7 +1,7 @@
 //have animations and transitions in the design
 //you need to have the option to either use city name or zipcode
 
-const API_KEY = 'f2a10f7d9e76a9264f68531a73c4ee63'
+const API_KEY = API_KEY_ENV
 
 //https://api.openweathermap.org/data/2.5/weather?zip=94040,us&appid={API key}
 
