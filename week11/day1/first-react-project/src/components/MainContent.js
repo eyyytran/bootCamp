@@ -10,9 +10,14 @@ export default function MainContent() {
     }
 
     const addTask = () => {
-        const newTask = task
-        setTodoList([...todoList, newTask])
+        setTodoList([...todoList, task])
         setTask('')
+    }
+
+    const handleKeyPress = e => {
+        if (e.key === 'Enter') {
+            addTask()
+        }
     }
 
     const deleteTask = taskToDelete => {
@@ -31,6 +36,7 @@ export default function MainContent() {
                     placeholder='text'
                     value={task}
                     onChange={handleChange}
+                    onKeyDown={handleKeyPress}
                 ></input>
                 <button type='submit' onClick={addTask}>
                     Add Task
