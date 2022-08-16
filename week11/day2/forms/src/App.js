@@ -8,7 +8,39 @@ function App() {
         email: '',
         address: '',
     }
+
+    const isRequired = value => (value === '' ? false : true)
+
+    const isLength = (length, min, max) =>
+        length < min || length > max ? false : true
+
+    const isEmail = email => {
+        const validEmail = new RegExp(
+            '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+        )
+
+        return validEmail.test(email)
+    }
+
     const [formData, setFormData] = useState(defaultForm)
+
+    const validateInput = e => {
+        const text = e.target.value
+        const name = e.target.name
+        switch (name) {
+            case 'email':
+                console.log(isRequired(text))
+                console.log(isEmail(text))
+                break
+            case 'name':
+                console.log(isRequired(text))
+                console.log(isLength(text.length, 5, 10))
+                break
+            default:
+                break
+        }
+    }
+
     return (
         <div className='App'>
             <h1>Form</h1>
@@ -18,25 +50,15 @@ function App() {
                         type='text'
                         name='name'
                         placeholder='name'
-                        value={formData.name}
-                        onChange={e =>
-                            setFormData({
-                                ...formData,
-                                [e.target.name]: e.target.value,
-                            })
-                        }
+                        defaultValue={formData.name}
+                        onChange={e => validateInput(e)}
                     />
                     <input
                         type='text'
                         name='email'
                         placeholder='email'
-                        value={formData.email}
-                        onChange={e =>
-                            setFormData({
-                                ...formData,
-                                [e.target.name]: e.target.value,
-                            })
-                        }
+                        defaultValue={formData.email}
+                        onChange={e => validateInput(e)}
                     />
                     <input
                         type='text'
