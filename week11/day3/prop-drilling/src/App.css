@@ -18,8 +18,22 @@ body {
     align-items: center;
 }
 
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav-bar input {
+    padding-left: 1rem;
+    height: 2rem;
+    border-radius: 3px;
+}
+
 .card-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -29,9 +43,23 @@ body {
     align-items: center;
     padding: 1rem;
     margin: 1rem;
-    border: black solid 3px;
+    border: black solid 2px;
+    border-radius: 3px;
+}
+
+.pokemon-name {
+    text-align: center;
+    font-size: 18px;
 }
 
 .pokemon-image img {
     cursor: pointer;
+    padding: 5px;
+}
+
+.pokemon-card .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
 }
