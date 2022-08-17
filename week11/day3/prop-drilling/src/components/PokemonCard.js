@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export const PokemonCard = ({ pokemon, deletePokemon }) => {
     const [frontImgURL, setFrontImgURL] = useState('')
     const [backImgURL, setBackImgURL] = useState('')
-    const [imageSide, setImageSide] = useState('')
+    const [front, setFront] = useState(true)
 
     useEffect(() => {
         const fetchPokemon = async () => {
@@ -17,23 +17,19 @@ export const PokemonCard = ({ pokemon, deletePokemon }) => {
         fetchPokemon()
     }, [pokemon.name])
 
-    useEffect(() => {
-        setImageSide(frontImgURL)
-    }, [frontImgURL])
-
     const handleChange = () => {
-        if (imageSide === frontImgURL) {
-            setImageSide(backImgURL)
-            return
-        }
-        setImageSide(frontImgURL)
+        setFront(!front)
     }
 
     return (
         <div className='pokemon-card'>
             <div className='pokemon-name'>{pokemon.name}</div>
             <div className='pokemon-image'>
-                <img src={imageSide} alt='' onClick={handleChange} />
+                <img
+                    src={front ? frontImgURL : backImgURL}
+                    alt=''
+                    onClick={handleChange}
+                />
             </div>
             <div className='button-container'>
                 <button
