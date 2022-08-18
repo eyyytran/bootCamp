@@ -18,16 +18,16 @@ function App() {
                 <Route path='about' element={<About />} />
                 <Route
                     path='movies'
-                    element={
-                        <MovieContainer
-                            setSelectedMovie={setSelectedMovie}
-                            movieList={movieList}
-                        />
-                    }
+                    element={<MovieContainer movieList={movieList} />}
                 />
                 <Route
-                    path='movies/details'
-                    element={<MovieDetails selectedMovie={selectedMovie} />}
+                    path='movies/:movieId'
+                    element={
+                        <MovieDetails
+                            selectedMovie={selectedMovie}
+                            setSelectedMovie={setSelectedMovie}
+                        />
+                    }
                 />
                 <Route
                     path='*'
