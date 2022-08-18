@@ -5,10 +5,11 @@ import Navbar from './components/Navbar'
 import MovieContainer from './components/movie-components/MovieContainer'
 import MovieDetails from './components/movie-components/MovieDetails'
 import Home from './components/Home'
+import './App.css'
 
 function App() {
     const [movieList, setMovieList] = useState([])
-    const [selectedMovie, setSelectedMovie] = useState('')
+    const [selectedMovie, setSelectedMovie] = useState({})
     return (
         <BrowserRouter>
             <Navbar setMovieList={setMovieList} />
@@ -24,7 +25,10 @@ function App() {
                         />
                     }
                 />
-                <Route path='details' element={<MovieDetails />} />
+                <Route
+                    path='movies/details'
+                    element={<MovieDetails selectedMovie={selectedMovie} />}
+                />
                 <Route
                     path='*'
                     element={

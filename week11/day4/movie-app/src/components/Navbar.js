@@ -5,7 +5,7 @@ import Searchbar from './navbar-components/Searchbar'
 
 const Navbar = ({ setMovieList }) => {
     return (
-        <div>
+        <div className='navbar'>
             <Header />
             <Searchbar setMovieList={setMovieList} />
             <NavbarLinks />

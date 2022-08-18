@@ -9,7 +9,7 @@ const Searchbar = ({ setMovieList }) => {
         try {
             e.preventDefault()
             const results = await fetch(
-                'http://www.omdbapi.com/?s=toy&3896198&apikey=c3587df3'
+                `http://www.omdbapi.com/?s=${searchValue}&apikey=c3587df3`
             )
             const json = await results.json()
             setMovieList(json.Search)
@@ -21,7 +21,7 @@ const Searchbar = ({ setMovieList }) => {
     }
 
     return (
-        <div>
+        <div className='searchbar'>
             <form>
                 <input
                     type='text'
