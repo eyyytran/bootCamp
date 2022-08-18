@@ -1,15 +1,18 @@
 import React from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const MovieCard = () => {
+const MovieCard = ({ movie }) => {
     const navigate = useNavigate()
-    const navigateToDetails = () => {
-        navigate('movies/dummyRoute')
+    const handleClick = () => {
+        navigate('details')
     }
     return (
-        <div onClick={navigateToDetails}>
-            MovieCard
-            <Outlet />
+        <div className='card' onClick={handleClick}>
+            <div className='poster'>
+                <img src={movie.Poster} alt='' />
+            </div>
+            <div className='title'>{movie.Title}</div>
+            <div className='year'>{movie.Year}</div>
         </div>
     )
 }
