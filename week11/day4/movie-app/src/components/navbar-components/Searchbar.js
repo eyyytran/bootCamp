@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Button from '@mui/material/Button'
+import { TextField } from '@mui/material'
 
 const Searchbar = ({ setMovieList }) => {
     const navigate = useNavigate()
@@ -23,14 +25,20 @@ const Searchbar = ({ setMovieList }) => {
     return (
         <div className='searchbar'>
             <form>
-                <input
-                    type='text'
+                <TextField
+                    id='outline-basic'
+                    variant='outlined'
+                    label='Search Movies'
                     value={searchValue}
                     onChange={e => setSearchValue(e.target.value)}
                 />
-                <button type='submit' onClick={handleSearchClick}>
+                <Button
+                    variant='contained'
+                    type='submit'
+                    onClick={handleSearchClick}
+                >
                     Search
-                </button>
+                </Button>
             </form>
         </div>
     )
