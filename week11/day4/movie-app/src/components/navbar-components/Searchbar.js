@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Button from '@mui/material/Button'
-import { TextField } from '@mui/material'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Searchbar = ({ setMovieList }) => {
     const navigate = useNavigate()
@@ -25,20 +24,18 @@ const Searchbar = ({ setMovieList }) => {
     return (
         <div className='searchbar'>
             <form>
-                <TextField
-                    id='outline-basic'
-                    variant='outlined'
-                    label='Search Movies'
+                <input
+                    type='text'
                     value={searchValue}
                     onChange={e => setSearchValue(e.target.value)}
                 />
-                <Button
+                <button
                     variant='contained'
                     type='submit'
                     onClick={handleSearchClick}
                 >
-                    Search
-                </Button>
+                    <FontAwesomeIcon icon='fa-magnifying-glass' />
+                </button>
             </form>
         </div>
     )

@@ -6,10 +6,10 @@ const NavbarLinks = () => {
     return (
         <div className='links'>
             <ButtonGroup>
-                <Button variant='text' href='/'>
+                <Button variant='text' sx={{ fontSize: '18px' }} href='/'>
                     HOME
                 </Button>
-                <Button variant='text' href='/about'>
+                <Button variant='text' sx={{ fontSize: '18px' }} href='/about'>
                     ABOUT
                 </Button>
             </ButtonGroup>

@@ -1,11 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
+
 import About from './components/About'
 import Navbar from './components/Navbar'
 import MovieContainer from './components/movie-components/MovieContainer'
 import MovieDetails from './components/movie-components/MovieDetails'
 import Home from './components/Home'
+
 import './App.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMagnifyingGlass, faStar } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faMagnifyingGlass, faStar)
 
 function App() {
     const [movieList, setMovieList] = useState([])

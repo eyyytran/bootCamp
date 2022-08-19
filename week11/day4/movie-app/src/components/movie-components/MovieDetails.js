@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MovieDetails = ({ setSelectedMovie, selectedMovie }) => {
     let params = useParams()
@@ -24,18 +25,27 @@ const MovieDetails = ({ setSelectedMovie, selectedMovie }) => {
     return (
         <div className='details'>
             <div className='title'>{selectedMovie.Title}</div>
-            <div className='small-details'>
+            <div className='subtitle'>
                 <div className='release-date'>{selectedMovie.Year}</div>
+                <div className='age-rating'>{selectedMovie.Rated}</div>
                 <div className='runtime'>{selectedMovie.Runtime}</div>
-            </div>
-            <div className='poster'>
-                <img src={selectedMovie.Poster} alt='' />
-            </div>
-            <div className='large-details'>
                 <div className='rating'>
-                    IMDB Rating: {selectedMovie.imdbRating}
+                    <FontAwesomeIcon icon='fa-solid fa-star' />
+                    {selectedMovie.imdbRating}/10
                 </div>
-                <div className='synopsis'>Synopsis: {selectedMovie.Plot}</div>
+            </div>
+            <div className='content'>
+                <div className='poster'>
+                    <img src={selectedMovie.Poster} alt='' />
+                </div>
+                <div className='large-details'>
+                    <div className='genre'>{selectedMovie.Genre}</div>
+                    <div className='synopsis'>{selectedMovie.Plot}</div>
+                    <div className='director'>
+                        Director: {selectedMovie.Director}
+                    </div>
+                    <div className='actors'>Actors: {selectedMovie.Actors}</div>
+                </div>
             </div>
         </div>
     )
