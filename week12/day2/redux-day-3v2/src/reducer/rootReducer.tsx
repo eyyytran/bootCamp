@@ -1,3 +1,4 @@
+import { stat } from 'fs'
 import { IProduct } from '../interfaces'
 
 const productData: Array<IProduct> = [
@@ -35,15 +36,16 @@ const productData: Array<IProduct> = [
 
 type State = {
     user: string
-    cart: Array<{}>
+    cart: IProduct[]
     inventory: IProduct[]
-    // inventory: { description: string; price: string }[]
+    order: { user: string; items: IProduct[] }
 }
 
 const initialState: State = {
     user: 'Andrea',
     cart: [],
     inventory: productData,
+    order: { user: 'Andrea', items: [] },
 }
 
 type Action = {
@@ -54,10 +56,19 @@ type Action = {
 const rootReducer = (state = initialState, action: Action) => {
     switch (action?.type) {
         case 'ADD_ITEM':
+            state.inventory = state.inventory.filter((product: IProduct) => {
+                return product.productId !== action.payload.productId
+            })
             return { ...state, cart: [...state.cart, action.payload] }
         case 'REMOVE_ITEM':
-            state.cart.splice(action.payload, 1)
-            return { ...state, cart: state.cart }
+            state.cart = state.cart.filter((product: IProduct) => {
+                return product.productId !== action.payload.productId
+            })
+            return {
+                ...state,
+                inventory: [...state.inventory, action.payload],
+                cart: state.cart,
+            }
         default:
             return state
     }
