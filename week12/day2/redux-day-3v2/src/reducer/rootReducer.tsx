@@ -38,14 +38,12 @@ type State = {
     user: string
     cart: IProduct[]
     inventory: IProduct[]
-    order: { user: string; items: IProduct[] }
 }
 
 const initialState: State = {
     user: 'Andrea',
     cart: [],
     inventory: productData,
-    order: { user: 'Andrea', items: [] },
 }
 
 type Action = {
