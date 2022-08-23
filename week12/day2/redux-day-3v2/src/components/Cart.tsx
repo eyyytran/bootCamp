@@ -1,9 +1,11 @@
 import { createClient } from '@supabase/supabase-js'
 import { useAppSelector } from '../app/hooks'
 import { IProduct } from '../interfaces'
+import { ToastContainer, toast } from 'react-toastify'
 import CartContent from './CartContent'
 import EmptyCart from './EmptyCart'
-import config from '../../config.json'
+import config from '../config.json'
+import 'react-toastify/dist/ReactToastify.css'
 
 const URL = config.SUPABASE_URL
 const KEY = config.SUPABASE_KEY
@@ -12,9 +14,20 @@ const supabase = createClient(URL, KEY)
 const Cart = () => {
     const cart = useAppSelector(state => state.cart)
     const sendToDb = async () => {
-        const { data, error } = await supabase
-            .from('ProductsDatabase')
-            .insert([{ name: 'Andrea', items: cart }])
+        try {
+            const { data, error } = await supabase
+                .from('ProductsDatabase')
+                .insert([{ name: 'Andrea', items: cart }])
+            toast.success('Your order has been placed!', {
+                className: 'toast',
+                autoClose: 500,
+            })
+        } catch (error) {
+            toast.error('Something went wrong!', {
+                className: 'toast',
+                autoClose: 500,
+            })
+        }
     }
 
     return (
@@ -43,6 +56,7 @@ const Cart = () => {
             >
                 Checkout
             </button>
+            <ToastContainer />
         </div>
     )
 }
