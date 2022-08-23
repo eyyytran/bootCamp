@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Search = () => {
     const dispatch = useDispatch()
-    const weather = useSelector(state => state.weather)
     const location = useSelector(state => state.location)
 
-    const API_KEY = '60a45a57640d5da19c4a86699363c8f9'
+    const API_KEY = process.env.API_KEY
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${location},us&appid=${API_KEY}&units=imperial`
 
     const handleSubmit = async e => {
