@@ -1,4 +1,3 @@
-import { stat } from 'fs'
 import { IProduct } from '../interfaces'
 
 const productData: Array<IProduct> = [
